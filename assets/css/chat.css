@@ -1,0 +1,170 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+.title {
+    text-transform: capitalize;
+}
+
+/**header***/
+.chat-area .header {
+    width: 100%;
+    background-color: rgba(55, 100, 55, 0.952);
+    position: sticky;
+    top: 0;
+    padding-bottom: 10px;
+}
+
+.header .back-icon {
+    width: 30px;
+    float: left;
+    padding: 10px;
+    font-size: 30px;
+    color: #c7d3d4ff;
+    position: relative;
+    top: 10px;
+}
+
+.header img {
+    width: 60px;
+    height: 60px;
+    border: none;
+    border-radius: 100px;
+    margin-left: 20px;
+    position: relative;
+    top: 10px;
+}
+
+.header .back-and-picture {
+    width: 9%;
+    float: left;
+}
+
+.header .chat-details {
+    width: 25%;
+    float: left;
+    margin-left: 10px;
+}
+
+.header span {
+    font-size: 30px;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    letter-spacing: 1px;
+    color: #c7d3d4ff;
+    text-transform: capitalize;
+    font-weight: 500;
+}
+
+.header p {
+    font-size: 20px;
+    color: rgb(95, 114, 143);
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    text-transform: capitalizes;
+}
+
+.header::after {
+    content: "";
+    clear: both;
+    display: table;
+}
+
+/**chat box for outgoing and incoming chat***/
+.chat-box {
+    height: 530px;
+    overflow-y: auto;
+    margin-bottom: -15px;
+    background-color: ivory;
+    padding: 10px 30px 20px 30px;
+    box-shadow: inset 0 32px 32px -32px rgb(0 0 0 / 5%),
+                inset 0 -32px 32px -32px rgb(0 0 0 / 5%);
+}
+
+.chat-box::-webkit-scrollbar {
+    width: 0px;  /***this command makes it scroll without a scrollbar by the side***/
+}
+
+.chat-box .chat p {
+    padding: 8px 16px;
+    font-size: 20px;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    word-wrap: break-word;
+    box-shadow: 0 0 32px rgb(0 0 0 / 8%),
+                0 16px 16px -16px rgb(0 0 0 / 10%);
+}
+
+.chat-box .chat {
+    margin: 15px 0 0 0;
+}
+
+/**for outgoing chats/messages**/
+.chat-box .outgoing {
+    display: flex;
+}
+
+.outgoing p {
+    background: #c7d3d4ff;
+    color: rgba(14, 48, 14, 0.952);
+    border-radius: 18px 18px 0 18px;
+}
+
+.outgoing div {
+    margin-left: auto;
+    max-width: calc(100% - 500px);
+}
+
+/***for incoming chats/messages***/
+.chat-box .incoming img {
+
+}
+
+.chat-box .incoming {
+    display: flex;
+    align-items: flex-end;
+}
+
+.incoming p {
+    background: rgba(55, 100, 55, 0.952);
+    color: rgb(204, 229, 231);
+    border-radius: 18px 18px 18px 0px;
+}
+
+.incoming div {
+    margin-left: 10px;
+    max-width: calc(100% - 550px);
+    margin-right: auto;
+}
+
+/**Typing area**/
+.chat-area .typing {
+    position: sticky;
+    bottom: 0;
+}
+
+.chat-area .typing form {
+    display: flex;
+    padding: 5px 10px 0px 0px;
+    justify-content: space-between;
+}
+
+.typing input {
+    height: 45px;
+    width: calc(100% - 39px);
+    padding: 10px;
+    font-size: 20px;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    outline: none;
+    border-radius: 5px 0 0 5px;
+    border: 1px;
+}
+
+.typing .send {
+    width: 60px;
+    border: none;
+    outline: none;
+    border-radius: 0 5px 5px 0;
+    background: cornflowerblue;
+    font-size: 20px;
+    cursor: pointer;
+}

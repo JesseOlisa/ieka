@@ -1,0 +1,662 @@
+/******
+GENERAL COURIER FILES EFFECT
+*******/
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+
+/********
+ASIDE- SIDEBAR BY THE SIDE
+*****/
+aside {
+    width: 22%;
+    background-color: #c7d3d4ff;
+    height: 657px;
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    overflow-x: hidden;
+    padding-top: 20px;
+}
+
+aside h4 {
+    text-align: center;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    text-transform: capitalize;
+    font-size: 35px;
+    color: rgba(15, 48, 14, 0.952);;
+    letter-spacing: 1px;
+}
+
+#identity {
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    font-size: 20px;
+    text-transform: capitalize;
+    text-align: center;
+}
+
+hr {
+    border: 1px solid rgba(15, 48, 14, 0.952);
+}
+
+aside .menu {
+    padding: 10px;
+    position: relative;
+    left: 35px;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    font-size: 25px;
+    text-transform: capitalize;
+}
+
+aside .courier-btn {
+    font-size: 25px;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    color: rgba(15, 48, 14, 0.952);
+}
+
+aside .courier_details {
+    display: none;
+}
+
+.courier_details a {
+    display: block;
+    background-color: rgb(125, 161, 159);
+    padding: 10px;
+    position: relative;
+    left: 45px;
+    text-transform: capitalize;
+    font-size: 19px;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+.courier_details a:hover {
+    background-color: none;
+    font-size: 24px;
+}
+
+aside a {
+    text-decoration: none;
+    color: rgba(15, 48, 14, 0.952);
+}
+
+aside a:active {
+    background-color: bisque;
+}
+
+#dashboard:hover,
+.courier-btn:hover,
+#track:hover {
+    background-color: cadetblue;
+    cursor: pointer;
+    padding: 5px;
+    border-radius: 5px;
+}
+
+
+/*********
+MAIN INFORMATION
+***********/
+
+/*******
+Top Navbar
+*******/
+.main_information {
+    margin-left: 290px;
+}
+
+.topnav {
+    background-color: rgba(14, 48, 14, 0.952);
+    padding: 20px;
+}
+
+.topnav nav {
+    position: sticky;
+    top: 0;
+}
+
+.topnav nav div {
+    display: inline-block;
+    margin-right: 20px;
+}
+
+.topnav nav a {
+    text-transform: capitalize;
+    font-size: 20px;
+    text-decoration: none;
+    font-weight: 450;
+    letter-spacing: 1px;
+    color:  #c7d3d4ff;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+
+}
+
+.topnav nav a:hover {
+    border:  1px solid  #c7d3d4ff;
+    border-radius: 3px;
+    padding: 3px;
+}
+
+/****
+HEADNOTE ON DASHBOARD AND OTHER PAGES
+***/
+.headnote {
+    padding: 20px;
+}
+
+.headnote h6 {
+    font-size: 25px;
+    text-align: justify;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    color: rgba(14, 48, 14, 0.952);
+}
+
+#under {
+    margin-top: 10px;
+    margin-bottom: 10px;
+    width: 100%;
+    border: 0.1px solid rgba(14, 48, 14, 0.952);
+}
+
+/*******
+VARIOUS SECTIONS ON DASHBOARD
+*******/
+.niche {
+    padding: 5px;
+}
+
+.niche div {
+    width: 30%;
+    float: left;
+    border: 1px solid grey;
+    margin-right: 25px;
+    margin-left: 10px;
+    height: 79px;
+    border-radius: 5px;
+}
+
+.niche .descript {
+    padding: 5px;
+    position: relative;
+    top:5px;
+    font-size: 20px;
+}
+
+.niche .description {
+    position: relative;
+    bottom: 0;
+    top: 8px;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    text-transform: capitalize;
+    font-size: 20px;
+    padding: 5px;
+}
+
+.second_row {
+    margin-top: 20px;
+}
+
+.niche::after {
+    content: "";
+    clear: both;
+    display: table;
+}
+
+/***********
+Add Courier on Add new Courier Page
+**********/
+
+.courier_form {
+    overflow: auto;
+    width: 90%;
+    margin: auto;
+    padding: 10px;
+    margin-left: 35px;
+    border-radius: 5px;
+    border: 1px solid rgba(14, 48, 14, 0.952);
+}
+
+.courier_form .first_part {
+    width: 45%;
+    float: left;
+}
+
+.courier_form div {
+    margin-bottom: 15px;
+}
+
+.first_part label {
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    font-size: 23px;
+    text-transform: capitalize;
+    font-weight: 500;
+    color: rgba(15, 48, 14, 0.952);
+}
+
+.first_part input {
+    width: 100%;
+    height: 30px;
+    margin-top: 5px;
+    padding: 5px;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    font-size: 18px;
+}
+
+.courier_form .second_part {
+    width: 45%;
+    float: left;
+    margin-left: 70px;
+}
+
+.second_part label {
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    font-size: 23px;
+    text-transform: capitalize;
+    font-weight: 500;
+    color: rgba(15, 48, 14, 0.952);
+}
+
+.second_part input {
+    width: 100%;
+    height: 30px;
+    border: 1px solid grey;
+    margin-top: 5px;
+    padding: 5px;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    font-size: 18px;
+}
+
+.form_parts::after {
+    clear: both;
+    content: "";
+    display: table;
+}
+
+#add_courier {
+    padding: 5px;
+    background-color: #c7d3d4ff;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    font-size: 20px;
+    border: 0px solid grey;
+    border-radius: 5px;
+    text-transform: capitalize;
+}
+
+#add_courier:hover {
+    cursor: pointer;
+    background-color: rgba(14, 48, 14, 0.952);
+}
+
+.successful_submission {
+    background-color: #c7d3d4ff;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    font-size: 20px;
+    color: rgba(14, 48, 14, 0.952);
+    width: 35%;
+    padding: 7px;
+    overflow: auto;
+    position: absolute;
+    top: 70px;
+    right: 70px;
+    display: none;
+}
+
+#close {
+    float: right;
+    text-decoration: underline;
+}
+
+#close:hover {
+    cursor: pointer;
+    font-size: 22px;
+}
+
+
+/********
+The list table on list courier
+The VIEW page
+The Track Courier Page
+******/
+
+.all_courier,
+.general_body,
+.track {
+    margin-left: 37px;
+    padding-bottom: 60px;
+}
+
+.all_courier table thead td {
+    font-weight: bold;
+    font-size: 24px;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    padding: 10px 20px;
+    text-align: center;
+    text-transform: capitalize;
+    color: rgba(15, 48, 14, 0.952);
+}
+
+.all_courier tbody td {
+    text-transform: capitalize;
+    padding: 10px 15px;
+    font-size: 17px;
+    font-weight: 500;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+
+}
+
+.all_courier table td{
+    border: 1px solid grey;
+}
+
+.all_courier table {
+    border-collapse: collapse;
+}
+
+.current {
+    border: 1px solid rgba(14, 48, 14, 0.952);
+    position: relative;
+    top: 25px;
+    font-weight: 400;
+    font-size: 15px;
+    padding: 7px 14px;
+    color: #c7d3d4ff;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    background-color: rgba(14, 48, 14, 0.952);
+}
+
+.page_numbers a{
+    margin-right: 10px;
+}
+
+.later {
+    border: 1px solid rgba(14, 48, 14, 0.952);
+    position: relative;
+    top: 25px;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    color: rgba(14, 48, 14, 0.952);
+    padding: 7px 14px;
+    text-decoration: none;
+    font-size: 15px;
+    font-weight: 400;
+}
+
+.later:hover {
+    cursor: pointer;
+    text-decoration: underline;
+}
+
+#show_details a{
+    color: rgba(14, 48, 14, 0.952);
+    text-decoration: underline;
+}
+
+#show_details a:hover {
+    padding: 4px;
+    background-color: #c7d3d4ff;
+}
+
+
+/**********
+VIEW PAGE
+**********/
+.side_head a,
+.side_head span,
+.side_head span:hover,
+.side_head a:hover {
+    position: relative;
+    top: 20px;
+    left: 840px;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    font-size: 20px;
+    border: 1px solid rgba(14, 48, 14, 0.952);
+    padding: 5px;
+    margin: 10px;
+    text-decoration: none;
+    text-transform: capitalize;
+    color: rgba(15, 48, 14, 0.952);
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.data_info {
+    border: 1px solid rgba(14, 48, 14, 0.952);
+    position: relative;
+    border-radius: 5px;
+    top: 35px;
+    left: -15px;
+    padding-top: 15px;
+    padding-bottom: 15px;
+    display: flex;
+    justify-content: space-around;
+}
+
+.data_info div {
+    margin-bottom: 15px;
+}
+
+.data_info .label {
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    font-weight: 650;
+    font-size: 22px;
+    color: rgba(14, 48, 14, 0.952);
+    text-transform: capitalize;
+}
+
+.data_info .jabe {
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    font-weight: 650;
+    font-size: 22px;
+    color: rgba(14, 48, 14, 0.952);
+}
+
+.data_info .data {
+    font-size: 20px;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    text-transform: capitalize;
+}
+
+
+/**********
+The Track Courier Page
+*********/
+.track .ref_number {
+    font-size: 22px;
+    font-weight: 500;
+    margin: 20px;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    text-transform: capitalize;
+    color: rgba(14, 48, 14, 0.952);
+}
+
+#trace {
+    margin-left: 20px;
+    width: 50%;
+    height: 42px;
+    border: 1px solid rgba(14, 48, 14, 0.952);
+    border-radius: 5px 0 0 5px;
+    padding: 5px;
+    border: 1px solid grey;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    font-size: 20px;
+}
+
+#track_courier {
+    height: 42px;
+    padding: 5px;
+    font-size: 20px;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    border-radius: 0 5px 5px 0;
+    border: none;
+    background-color: rgb(125, 161, 159);
+    margin-left: -7px;
+}
+
+#trace:focus {
+    outline: none;
+    outline-offset: 0;
+}
+
+#track_courier:hover {
+    cursor: pointer;
+}
+
+#clos {
+    position: relative;
+    text-align: center;
+    color: rgb(125, 161, 159);
+    vertical-align: middle;
+    top: 15px;
+    float: right;
+    right: 30px;
+    font-size: 18px;
+}
+
+#clos:hover {
+    text-decoration: underline;
+    cursor: pointer;
+}
+
+#firs {
+    position: relative;
+    bottom: 15px;
+    color: rgba(14, 48, 14, 0.952);
+    font-size: 25px;
+    font-weight: 650;
+}
+
+.options {
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    overflow: auto;
+    width: 45%;
+    border-radius: 10px;
+    margin: 40px 0 0 200px;
+    padding: 10px;
+    display: none;
+}
+
+/***********
+Cancel Courier 
+******/
+
+.cancel {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    padding: 5px;
+    left: 600px;
+    top: 0;
+    width: 40%;
+    height: 32%;
+    overflow: auto;
+    background-color: rgba(15, 48, 14, 0.952);
+} 
+
+.modal {
+    width: 90%;
+    margin: auto;
+    color: #c7d3d4ff;
+    position: relative;
+    top: 25px;
+}
+
+.modal p {
+    font-size: 23px;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+.modal input,
+.modal span {
+    margin-top: 25px;
+    position: relative;
+    left: 180px;
+    margin-right: 20px;
+    font-size: 20px;
+    font-family: app;
+    background-color: inherit;
+    color: #c7d3d4ff;
+    border: 1px solid #c7d3d4ff;
+    padding: 5px;
+    border-radius: 5px;
+}
+
+.modal input:hover,
+.modal span:hover {
+    cursor: pointer;
+    background-color: rgb(125, 161, 159);
+
+}
+
+
+/*************
+    TRANSACTIONS PAGE
+*************/
+.all_transaction {
+    margin: auto;
+    width: 80%;
+}
+
+.all_transaction table thead td {
+    font-weight: bold;
+    font-size: 24px;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    padding: 10px 20px;
+    text-align: center;
+    text-transform: capitalize;
+    color: rgba(15, 48, 14, 0.952);
+}
+
+.all_transaction tbody td {
+    text-transform: capitalize;
+    padding: 10px 15px;
+    font-size: 17px;
+    font-weight: 500;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+
+}
+
+.all_transaction table td{
+    border: 1px solid grey;
+}
+
+.all_transaction table {
+    border-collapse: collapse;
+}
+
+
+/**************************
+VIEW TRANSACTIONS PAGE
+**********************/
+.all_data {
+    border: 1px solid rgba(14, 48, 14, 0.952);
+    position: relative;
+    border-radius: 5px;
+    width: 70%;
+    margin: auto;
+    top: 35px;
+    left: -15px;
+    padding-top: 15px;
+    padding-bottom: 15px;
+    display: flex;
+    justify-content: space-around;
+}
+
+.all_data div {
+    margin-bottom: 15px;
+}
+
+.all_data .label {
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    font-weight: 650;
+    font-size: 22px;
+    color: rgba(14, 48, 14, 0.952);
+    text-transform: capitalize;
+}
+
+.all_data .data {
+    font-size: 20px;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    text-transform: capitalize;
+}
