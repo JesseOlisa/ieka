@@ -35,7 +35,8 @@
                     <input type="submit" value="Sign in" name="submit">
                 </div>
                 <div class="new_account">
-                    <p>New to Ieka?<a href="farmer-signup.php"> Create a new account with us</a></p>
+                    <p>New to Ieka?</p>
+                    <span><a href="farmer-signup.php"> Create a new account with us</a></span>
                 </div>
             </form>
         </div>

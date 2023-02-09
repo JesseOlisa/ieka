@@ -8,58 +8,61 @@
         <!--Links to the stylesheets-->
         <meta name="viewport" content="width=device-width, initial-scale = 1.0">
         <link href="/ieka/assets/css/forms.css" rel="stylesheet" type="text/css">
+        <link href="/ieka/assets/css/navbar.css" rel="stylesheet" type="text/css">
         <link href="/ieka/assets/css/all.min.css" rel="stylesheet" type="text/css">
         <script src="/ieka/assets/plugins/jquery-3.3.1.min.js"></script>
     </head>
     <body>
-        <header>
+    <header class="desktop-nav-container">
             <div class="front-line-header">
                 <div class="ieka-logo">
                     <h1 class="name">ieka</h1>
                 </div>
                 <div class="search-navbar">
                     <form action="search.php" class="search-tab" method="GET">
-                        <input type="text" autocomplete="on" placeholder="Type your search here" id="search" class="search-bar" name="find">
-                        <button class="search" name="search" type="submit">
-                            <img src="./assets/ionicons-2.0.1/png/512/ios7-search.png">
-                        </button>
+                        <label for="search" class="search--container">
+                            <input type="text" autocomplete="on" placeholder="Which agro product do you want?" id="search" class="search-bar" name="find">
+                            <span><i class="fa-solid fa-magnifying-glass"></i></span>
+                        </label>
                         <ul class="search-list" id="search-list" style="display: none;">
                         </ul>
                     </form>
                 </div>
-
+                
                 <!--login and register-->
                 <div class="credentials">
                     <div class="login">
-                        <span type="button" class="login-button">
+                        <button type="button" class="login-button">
                             <i class="far fa-user"></i>Login
-                        </span>
-
+                        </button>
+                        
                         <!--the login details as a modal dialog-->
-                        <div class="dropdown">
-                            <form action="login.php" class="login-form" method="POST" name="form">
-                                <div class="form-group">
-                                    <label for="phone-number">phone number</label>
-                                    <input type="text" name="phone-number" id="farmer" class="form-control">
-                                </div>
-                                <div class="form-group">
-                                    <label for="passcode">passcode</label>
-                                    <input type="password" name="passcode" id="passcode" class="form-control">
-                                </div>
-                                <div class="submit">
-                                    <input type="submit" value="submit" name="enter">
-                                </div>
-                            </form>
+                        <div class="dropdown form" id="dropdown-login">
+                            
+                            <div class="form-group">
+                                <a href="farmer-login.php">Farmer</a>
+                            </div>
+                            <div class="form-group">
+                                <a href="customer-login.php">Customer</a>
+                            </div>
                         </div>
                     </div>
                     <div class="register">
-                        <a href="farmer-signup.php" class="register-button">
-                            <i class="fas fa-user-plus"></i>Farmer Signup
-                        </a>
+                        <button type="button" class="signup-button">
+                        <i class="fas fa-user-plus"></i>Signup
+                    </button>
+                    <div class="dropdown form" id="dropdown-signup">
+                        <div class="form-group">
+                            <a href="farmer-signup.php">Farmer</a>
+                        </div>
+                        <div class="form-group">
+                            <a href="customer-signup.php">Customer</a>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
-
+            
             <!--navigation bar-->
             <div class="navigation_bar">
                 <nav class="navbar">
@@ -69,21 +72,47 @@
                     <div class="about section">
                         <a href="about.php" class="nav about">about us</a>
                     </div>
-                    <div class="category section">
-                        <a href="category.php" class="nav category">categories</a>
-                    </div>
-                    <div class="sell section">
-                        <a href="sell.php" class="nav sell">sell</a>
-                    </div>
                     <div class="customer section">
                         <a href="customer-service.php" class="nav customer">customer service</a>
-                    </div>
-                    <div class="register-customer">
-                        <a href="customer-signup.php" class="nav-register">customer signup</a>
                     </div>
                 </nav>
             </div>
         </header>
+        
+        <!-- *************** MOBILE NAVBAR  **************** -->
+        <header class="mobile-nav-container">
+                <div class="menu--container">
+                    <div role="button" class="menu--btn"></div>
+                </div>
+                <div class="ieka-logo">
+                    <h1 class="name">ieka</h1>
+                </div>
+                <!-- MOBILE SEARCH BAR -->
+            <div class="mobile-search-navbar">
+                <span><i class="fa-solid fa-magnifying-glass"></i></span>
+                <form action="search.php" class="search-tab" method="GET">
+                    <label for="search" class="search--container">
+                        <input type="text" autocomplete="on" placeholder="Which agro product do you want?" id="search" class="search-bar" name="find">
+                    </label>
+                    <ul class="search-list" id="search-list" style="display: none;">
+                    </ul>
+                </form>
+
+                <div>
+                <nav class="mobile-nav-links-container">
+                    <div>
+                        <a href="index.php">Home</a>
+                    </div>
+                    <div>
+                        <a href="about.php">About us</a>
+                    </div>
+                    <div>
+                        <a href="customer-service.php">Customer service</a>
+                    </div>
+                </nav>
+            </div>
+        </div>
+    </header>
         <section class="container">
             <div class="hi">
                 <h6>Welcome to Ieka's Digital Market</h6>

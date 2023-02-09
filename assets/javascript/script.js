@@ -3,8 +3,10 @@ var loginBtn = document.querySelector('.login-button');
 var signUpBtn = document.querySelector('.signup-button');
 var loginForm = document.querySelector('#dropdown-login');
 var signUpForm = document.querySelector('#dropdown-signup');
+let menuBtn = document.querySelector('.menu--btn');
+let mobileNav = document.querySelector('.mobile-nav-links-container');
+
 loginBtn.addEventListener('click', function () {
-	console.log();
 	if (loginForm.style.display === '') {
 		// this checks if the signup block is open
 		if ((signUpForm.style.display = 'block')) {
@@ -15,9 +17,7 @@ loginBtn.addEventListener('click', function () {
 		loginForm.style.display = '';
 	}
 });
-// loginBtn.addEventListener('blur', function () {
-// 	signUpForm.style.display = '';
-// });
+
 signUpBtn.addEventListener('click', function () {
 	if (signUpForm.style.display === '') {
 		if ((loginForm.style.display = 'block')) {
@@ -26,6 +26,17 @@ signUpBtn.addEventListener('click', function () {
 		signUpForm.style.display = 'block';
 	} else {
 		signUpForm.style.display = '';
+	}
+});
+
+// MOBILE NAV BAR
+menuBtn.addEventListener('click', () => {
+	if (!menuBtn.classList.contains('open')) {
+		menuBtn.classList.add('open');
+		mobileNav.style.transform = 'translateX(0)';
+	} else {
+		menuBtn.classList.remove('open');
+		mobileNav.style.transform = 'translateX(-100%)';
 	}
 });
 
@@ -97,7 +108,7 @@ function automaticslide() {
 	if (showco > show.length) {
 		showco = 1;
 	}
-	show[showco - 1].style.display = 'block';
+	show[showco - 1].style.display = 'flex';
 	setTimeout(automaticslide, 5000); // Change image every 6 seconds
 }
 
