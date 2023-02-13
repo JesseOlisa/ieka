@@ -2,6 +2,11 @@ ul,
 li {
 	list-style-type: none;
 }
+input {
+	width: 100%;
+	border: none;
+	outline: none;
+}
 /* HEADER */
 
 header {

@@ -114,10 +114,10 @@
         </div>
     </header>
         <section class="container">
-            <div class="hi">
-                <h6>Welcome to Ieka's Digital Market</h6>
-            </div>
             <div class="signup form">
+                <div class="hi">
+                    <h6>Welcome to Ieka's Digital Market</h6>
+                </div>
                 <form action="<?php echo htmlspecialchars($_SERVER['PHP_SELF']);?>" id="signup-data" enctype="multipart/form-data" method="POST">
                     <p class="error" style="display:none;"></p>     
                     <div class="sections">    
