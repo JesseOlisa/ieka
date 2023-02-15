@@ -1,293 +1,170 @@
 * {
-    box-sizing: border-box;
-    margin: 0;
-    padding: 0;
+	box-sizing: border-box;
+	margin: 0;
+	padding: 0;
 }
 
 /***BODY**/
 body {
-    background: #c7d3d4ff;
-}
-
-/**HEADER**/
-header .front-line-header {
-    background-color: rgba(14, 48, 14, 0.952);
-    padding: 2px;
-    overflow: auto;
-}
-
-header .name {
-    color: rgb(103, 139, 143);
-    font-size: 50px;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-}
-
-header .ieka-logo {
-    width: 25%;
-    float: left;
-    overflow: auto;
-    margin: auto 10px;
-}
-
-.header {
-    float: left;
-    width: 40%;
-    margin-left: 15px;
-}
-
-.header span {
-    text-transform: capitalize;
-}
-
-.header p {
-    line-height: 60px;
-    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-    font-size: 22px;
-    color: rgb(103, 139, 143);
-}
-
-header .out {
-    width: 30%;
-    float: right;
-    height: 100%;
-}
-
-#logout,
-#home,
-#pay {
-    position: relative;
-    top: 15px;
-    overflow: auto;
-    background-color: inherit;
-    cursor: pointer;
-    margin-left: 10px;
-    padding: 5px;
-    
-}
-
-#logout a, #logout a:visited,
-#home a, #home a:visited,
-#pay a, #pay a:visited {
-    text-decoration: none;
-    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-    font-size: 22px;
-    color: rgb(103, 139, 143);
-    text-transform: capitalize;
-}
-
-#home a:hover,
-#logout a:hover,
-#pay a:hover {
-    font-size: 23px;
-    border: 1px solid rgb(103, 139, 143);
-    padding: 3px;
-    border-radius: 5px;
-}
-
-header .front-line-header::after {
-    content: "";
-    display: table;
-    clear: both;
-}
-
-/**Search box for a farmer or a customer*/
-.search-list {
-    margin: 7px 15px 6px 20px;
-}
-
-.search-list input {
-    height: 40px;
-    width: 40%;
-    border: 1px solid rgba(14, 48, 14, 0.952);
-    border-radius: 5px 0 0 5px;
-    padding: 5px;
-    font-size: 20px;
-    letter-spacing: 1px;
-    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-    background-color: #c7d3d4ff;
-}
-
-.search-list input:focus {
-    outline: none;
-    outline-offset: 0;
-}
-
-#click {
-    background-color: cornflowerblue;
-    height: 40px;
-    border-radius: 0 5px 5px 0;
-    border: 1px solid cornflowerblue;
-    padding: 5px 10px 5px 10px;
-    margin-left: -5px;
-    vertical-align: 2px;
-    font-size: 20px;
-}
-
-#click:hover {
-    cursor: pointer;
-}
-
-/*Chatlist*/
-.users-list {
-    padding: 10px;
-    margin: 10px;
-    margin-top: 0;
-    padding-top: 0;
+	background: #c7d3d4ff;
 }
 
 /*Profile picture of the farmer/customer*/
 .person img {
-    width: 60px;
-    height: 60px;
-    border: none;
-    border-radius: 100px;
+	width: 60px;
+	height: 60px;
+	border: none;
+	border-radius: 100px;
 }
 
 .person .chat-content {
-    display: flex;
-    align-items: center;
-    height: 100px;
-    margin-top: -9px;
+	display: flex;
+	align-items: center;
+	/* margin-top: -9px; */
 }
 
 .chat-details {
-    margin-left: 6px;
-    padding: 5px;
+	margin-left: 6px;
+	padding: 5px;
 }
 
 .chat-details .message {
-    margin-top: 5px;
+	margin-top: 5px;
 }
 
 .chat-details a {
-    text-decoration: none;
-    word-spacing: 1px;
-    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+	text-decoration: none;
+	word-spacing: 1px;
+	font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen,
+		Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
 }
 
 .chat-details .chat_name {
-    font-size: 25px;
-    color: rgba(14, 48, 14, 0.952);
-    text-transform: capitalize;
-    font-weight: 500;
+	font-size: 25px;
+	color: rgba(14, 48, 14, 0.952);
+	text-transform: capitalize;
+	font-weight: 500;
 }
 
 .chat-details .message {
-    color: rgba(43, 96, 72, 0.976);
+	color: rgba(43, 96, 72, 0.976);
 }
 
 .chat-details a:visited {
-    color: rgba(43, 96, 72, 0.976);
-    text-decoration: none;
+	color: rgba(43, 96, 72, 0.976);
+	text-decoration: none;
 }
 
 .chat-content:hover {
-    background-color: rgba(100, 149, 127, 0.976);
-    padding-top: -50px;
-    padding-bottom: -50px;
+	background-color: rgba(100, 149, 127, 0.976);
+	/* padding-top: -50px; */
+	/* padding-bottom: -50px; */
 }
-
 
 /***********
 PAYMENT PAGE
 ***********/
 .form-details {
-    width: 40%;
-    margin: auto;
-    padding: 10px;
+	width: 40%;
+	margin: auto;
+	padding: 10px;
 }
 
 .purchase {
-    box-shadow:  0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-    background-color: white;
-    border: 1px solid white;
-    border-radius: 15px;
-    padding: 15px;
+	box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+	background-color: white;
+	border: 1px solid white;
+	border-radius: 15px;
+	padding: 15px;
 }
 
 .purchase h4 {
-    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-    text-transform: uppercase;
-    font-size: 25px;
-    color: rgba(14, 48, 14, 0.952);
-    letter-spacing: 1px;
-    text-align: center;
-    line-height: 40px;
-    margin-bottom: 10px;
-    font-weight: 700;
+	font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen,
+		Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+	text-transform: uppercase;
+	font-size: 25px;
+	color: rgba(14, 48, 14, 0.952);
+	letter-spacing: 1px;
+	text-align: center;
+	line-height: 40px;
+	margin-bottom: 10px;
+	font-weight: 700;
 }
 
 .flex-section {
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    margin-bottom: 20px;
+	display: flex;
+	flex-direction: row;
+	justify-content: center;
+	margin-bottom: 20px;
 }
 
 .farmer-info {
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    margin-bottom: 20px;
+	display: flex;
+	flex-direction: row;
+	justify-content: center;
+	margin-bottom: 20px;
 }
 
 .flex-section div,
 .farmer-info div,
 .purchase label {
-    text-transform: capitalize;
-    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-    font-size: 22px;
-    line-height: 20px;
-    font-weight: 400;
+	text-transform: capitalize;
+	font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen,
+		Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+	font-size: 22px;
+	line-height: 20px;
+	font-weight: 400;
 }
 
 .flex-section input,
 .farmer-info input {
-    text-transform: capitalize;
+	text-transform: capitalize;
 }
 
 .flex-section input,
 .farmer-info input,
 .purchase input {
-    height: 33px;
-    width: 90%;
-    border: 1px solid grey;
-    border-radius: 6px;
-    margin-top: 10px;
-    padding: 5px;
-    font-size: 18px;
-    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+	height: 33px;
+	width: 90%;
+	border: 1px solid grey;
+	border-radius: 6px;
+	margin-top: 10px;
+	padding: 5px;
+	font-size: 18px;
+	font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen,
+		Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
 }
 
-
 .textarea textarea {
-    margin-top: 10px;
-    padding: 5px;
-    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+	margin-top: 10px;
+	padding: 5px;
+	font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto,
+		Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
 }
 
 .textarea {
-    margin-bottom: 20px;
+	margin-bottom: 20px;
 }
 
 #payment {
-    margin-top: 10px;
-    background-color: rgba(14, 48, 14, 0.952);
-    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-    font-size: 20px;
-    padding: 5px;
-    margin-bottom: 12px;
-    color: #c7d3d4ff;
-    height: 50px;
-    width: 50%;
-    text-transform: capitalize;
+	margin-top: 10px;
+	background-color: rgba(14, 48, 14, 0.952);
+	font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen,
+		Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+	font-size: 20px;
+	padding: 5px;
+	margin-bottom: 12px;
+	color: #c7d3d4ff;
+	height: 50px;
+	width: 50%;
+	text-transform: capitalize;
 }
 
 #payment:hover {
-    cursor: pointer;
+	cursor: pointer;
 }
 
 .bucket {
-    width: 80%;
-    margin: auto;
+	width: 80%;
+	margin: auto;
 }

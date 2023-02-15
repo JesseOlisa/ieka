@@ -41,11 +41,11 @@
                 <div class="back-and-picture">
                     <a href="chat-list.php" class="back-icon"><i class="fas fa-arrow-left"></i></a>
                     <img src="../assets/images/Farmers/<?=$result['picture'];?>" alt="">
-                </div>
-                <!--the icon placed here is back arrow icon-->
-                <div class="chat-details">
-                    <span><?=$result['first_name']. ' '. $result['last_name'];?></span>
-                    <p><?=$result['status'];?></p>
+                    <!--the icon placed here is back arrow icon-->
+                    <div class="chat-details">
+                        <span><?=$result['first_name']. ' '. $result['last_name'];?></span>
+                        <p><?=$result['status'];?></p>
+                    </div>
                 </div>
             </div>
             <!--the body of the chat area-->
@@ -55,8 +55,8 @@
                 <form action="" class="typing-area" method="POST">
                     <input type="hidden" name="incoming_id" value="<?=$result['farm_id']?>" id="receiver"><!--the recipient, in this case the farmer-->
                     <input type="hidden" name="outgoing_id" value="<?=$_SESSION['id']?>" id="sender"><!--the sender, in this case the customer-->
-                    <input type="text" name="message" placeholder="Enter your message here.." class="input-field">
-                    <button class="send" name="send">send</button>
+                    <input type="text" name="message" placeholder="Enter your message here.." class="input-field" autocomplete="off">
+                    <button class="send" name="send">Send</button>
                 </form>
             </div>
         </section>
