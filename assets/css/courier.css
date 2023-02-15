@@ -163,7 +163,7 @@ HEADNOTE ON DASHBOARD AND OTHER PAGES
 }
 
 .headnote h6 {
-	font-size: 25px;
+	font-size: 1rem;
 	text-align: justify;
 	font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto,
 		Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
@@ -227,89 +227,62 @@ Add Courier on Add new Courier Page
 **********/
 
 .courier_form {
-	overflow: auto;
-	width: 90%;
-	margin: auto;
+	width: 50%;
+	margin-inline: auto;
 	padding: 10px;
-	margin-left: 35px;
 	border-radius: 5px;
-	border: 1px solid rgba(14, 48, 14, 0.952);
+	box-shadow: 1px -1px 15px 3px rgba(0, 0, 0, 0.45);
+	-webkit-box-shadow: 1px -1px 15px 3px rgba(0, 0, 0, 0.45);
+	-moz-box-shadow: 1px -1px 15px 3px rgba(0, 0, 0, 0.45);
+	background-color: white;
+	margin-bottom: 2rem;
 }
-
-.courier_form .first_part {
-	width: 45%;
-	float: left;
+@media screen and (max-width: 640px) {
+	.courier_form {
+		width: 100%;
+	}
 }
-
-.courier_form div {
-	margin-bottom: 15px;
-}
-
-.first_part label {
+.form_parts {
+	display: flex;
+	flex-direction: column;
 	font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto,
 		Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-	font-size: 23px;
-	text-transform: capitalize;
-	font-weight: 500;
-	color: rgba(15, 48, 14, 0.952);
 }
 
-.first_part input {
-	width: 100%;
-	height: 30px;
-	margin-top: 5px;
-	padding: 5px;
-	font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto,
-		Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-	font-size: 18px;
-}
-
-.courier_form .second_part {
-	width: 45%;
-	float: left;
-	margin-left: 70px;
-}
-
+.first_part label,
 .second_part label {
-	font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto,
-		Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-	font-size: 23px;
+	font-size: 1rem;
 	text-transform: capitalize;
 	font-weight: 500;
 	color: rgba(15, 48, 14, 0.952);
+	/* margin-block: 1rem; */
 }
 
+.first_part input,
 .second_part input {
 	width: 100%;
-	height: 30px;
-	border: 1px solid grey;
-	margin-top: 5px;
-	padding: 5px;
+	margin-top: 5px !important;
+	padding: 5px 8px;
 	font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto,
 		Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-	font-size: 18px;
+	font-size: 1rem;
 }
 
-.form_parts::after {
-	clear: both;
-	content: '';
-	display: table;
+#courier_description {
+	width: 100%;
 }
 
 #add_courier {
-	padding: 5px;
-	background-color: #c7d3d4ff;
+	padding: 8px 5px;
+	background-color: rgba(14, 48, 14, 0.952);
 	font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto,
 		Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-	font-size: 20px;
-	border: 0px solid grey;
+	font-size: 1rem;
+	margin-block: 1rem;
 	border-radius: 5px;
 	text-transform: capitalize;
-}
-
-#add_courier:hover {
-	cursor: pointer;
-	background-color: rgba(14, 48, 14, 0.952);
+	color: white;
+	font-weight: 500;
 }
 
 .successful_submission {
@@ -342,41 +315,6 @@ The list table on list courier
 The VIEW page
 The Track Courier Page
 ******/
-/* 
-.all_courier,
-.general_body,
-.track {
-	margin-left: 37px;
-	padding-bottom: 60px;
-}
-
-.all_courier table thead td {
-	font-weight: bold;
-	font-size: 24px;
-	font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto,
-		Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-	padding: 10px 20px;
-	text-align: center;
-	text-transform: capitalize;
-	color: rgba(15, 48, 14, 0.952);
-}
-
-.all_courier tbody td {
-	text-transform: capitalize;
-	padding: 10px 15px;
-	font-size: 17px;
-	font-weight: 500;
-	font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto,
-		Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-}
-
-.all_courier table td {
-	border: 1px solid grey;
-}
-
-.all_courier table {
-	border-collapse: collapse;
-} */
 
 .current {
 	border: 1px solid rgba(14, 48, 14, 0.952);
@@ -426,7 +364,8 @@ The Track Courier Page
 /**********
 VIEW PAGE
 **********/
-.side_head a,
+
+/* .side_head a,
 .side_head span,
 .side_head span:hover,
 .side_head a:hover {
@@ -444,6 +383,22 @@ VIEW PAGE
 	color: rgba(15, 48, 14, 0.952);
 	border-radius: 5px;
 	cursor: pointer;
+} */
+.side_head a,
+.side_head span {
+	width: 30px;
+	background-color: green;
+	padding: 0.5rem 1rem;
+	border-radius: 3px;
+	color: white;
+	text-transform: capitalize;
+}
+.top--nav--container {
+	width: 100%;
+	padding-top: 1rem;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
 }
 
 .data_info {
@@ -451,17 +406,26 @@ VIEW PAGE
 	position: relative;
 	border-radius: 5px;
 	top: 35px;
-	left: -15px;
-	padding-top: 15px;
-	padding-bottom: 15px;
 	display: flex;
 	justify-content: space-around;
+	padding: 1.2rem 0.8rem;
+	flex-wrap: wrap;
+	width: 100%;
 }
 
-.data_info div {
-	margin-bottom: 15px;
+.data_info .group div {
+	width: 300px;
 }
-
+@media screen and (max-width: 1200px) {
+	.data_info .group {
+		width: 100%;
+	}
+	.data_info .group div {
+		width: 100%;
+		padding-block: 0.5rem;
+		border-bottom: 1px solid black;
+	}
+}
 .data_info .label {
 	font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto,
 		Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
@@ -477,18 +441,24 @@ VIEW PAGE
 	font-weight: 650;
 	font-size: 22px;
 	color: rgba(14, 48, 14, 0.952);
+	margin-block: 0.5rem;
 }
 
 .data_info .data {
+	width: 100%;
 	font-size: 20px;
 	font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto,
 		Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
 	text-transform: capitalize;
+	overflow-wrap: break-word;
 }
 
 /**********
 The Track Courier Page
 *********/
+.track {
+	width: 50%;
+}
 .track .ref_number {
 	font-size: 22px;
 	font-weight: 500;
@@ -498,10 +468,22 @@ The Track Courier Page
 	text-transform: capitalize;
 	color: rgba(14, 48, 14, 0.952);
 }
-
+.track--input--container {
+	display: flex;
+}
+@media screen and (max-width: 800px) {
+	.track {
+		width: 100%;
+		text-align: center;
+	}
+	.track--input--container {
+		display: flex;
+		align-items: center;
+	}
+}
 #trace {
 	margin-left: 20px;
-	width: 50%;
+	width: 80%;
 	height: 42px;
 	border: 1px solid rgba(14, 48, 14, 0.952);
 	border-radius: 5px 0 0 5px;
@@ -513,6 +495,7 @@ The Track Courier Page
 }
 
 #track_courier {
+	width: 80px;
 	height: 42px;
 	padding: 5px;
 	font-size: 20px;
@@ -520,8 +503,8 @@ The Track Courier Page
 		Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
 	border-radius: 0 5px 5px 0;
 	border: none;
-	background-color: rgb(125, 161, 159);
-	margin-left: -7px;
+	background-color: green;
+	color: white;
 }
 
 #trace:focus {

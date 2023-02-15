@@ -11,9 +11,19 @@
     } else {
     }
 
-    //get the details of the farmer logged in
+    //get the details of the customer logged in
     $sql = "SELECT * FROM customers WHERE id = {$_SESSION['id']}"; 
     $result = $database->query($sql)->fetch_assoc();
+
+    //get the details of the customer courier
+    $sdl = "SELECT * FROM customer_couriers WHERE ((customer_id = {$_SESSION['id']}) AND (status = 'transit'))"; 
+    $record = $database->query($sql);
+    $transit = mysqli_num_rows($record);
+
+    //get the details of the customer courier
+    $sjl = "SELECT * FROM transactions WHERE ((customer_id = {$_SESSION['id']}) AND (status = 'successful'))"; 
+    $status = $database->query($sjl);
+    $number = mysqli_num_rows($status);
 
 ?>
 <!DOCTYPE HTML>
@@ -24,10 +34,11 @@
 
         <!--Links to the stylesheets-->
         <meta name="viewport" content="width=device-width, initial-scale = 1.0">
+        <link href="/ieka/assets/css/styles.css" rel="stylesheet" type="text/css">
         <link href="/ieka/assets/css/dashboardlayout.css" rel="stylesheet" type="text/css">
         <link href="/ieka/assets/css/index.css" rel="stylesheet" type="text/css">
         <link href="/ieka/assets/css/all.min.css" rel="stylesheet" type="text/css">
-
+        <script src="/ieka/assets/plugins/jquery-3.3.1.min.js"></script>
         <!-- FONT AWESOME -->
         <script src="https://kit.fontawesome.com/fb151ec1c7.js" crossorigin="anonymous" defer></script>
         <!-- JAVASCRIPT -->
@@ -43,11 +54,10 @@
                 </div>
                 <ul class="sidebar-links--container">
                     <li class="active"><a href="index.php">Overview</a></li>
-                    <li><a href="">Orders</a></li>
                     <li><a href="transactions.php">Transactions</a></li>
                     <li><a href="chat-list.php">Chats</a></li>
                     <li><a href="report.php">Report</a></li>
-                    <li><a href="courier/dashboard.php">Courier</a></li>
+                    <li><a href="./courier/dashboard.php">Courier</a></li>
                     <li><a href="pay.php?id=<?=$customer['id']?>">Payment</a></li>
                 </ul>
             </div>
@@ -82,7 +92,6 @@
                     <div>
                         <ul class="mobile-sidebar-links-container">
                             <li class="active"><a href="">Overview</a></li>
-                            <li><a href="">Orders</a></li>
                             <li><a href="transactions.php">Transactions</a></li>
                             <li><a href="chat-list.php">Chats</a></li>
                             <li><a href="report.php">Report</a></li>
@@ -108,17 +117,36 @@
                         <div class="stats--box">
                             <p>Completed Transactions</p>
                             <img src="../assets/images/icons/money.png" alt="transaction">
-                            <p>40</p>
+                            <p><?=$number;?></p>
+
                         </div>
                         <div class="stats--box">
                             <p>In Transit</p>
                             <img src="../assets/images/icons/delivery-bus.png" alt="courier">
-                            <p>3</p>
+                            <p><?=$transit;?></p>
                         </div>
                     </div>
                 </div>
             </div>
         </main>
         <script src="../assets/javascript/all.min.js"></script>
+        <script>
+            $("#search").keyup(function(event) {
+                console.log('goon');
+                //get the value in the search box
+                var search_keyword = event.target.value;
+                if (search_keyword) {
+                    var url = document.location.origin + '/ieka/search.php'
+                    //make an ajax call to the server with the above url
+                    $.get(url, {keyword: search_keyword}, function(response, statusCode, xJR){
+                        document.getElementById("search-list").innerHTML = response;
+                        //display the options corresponding to the searchwords
+                        document.getElementById('search-list').style.display = "block";
+                });
+                } else {
+                    document.getElementById('search-list').style.display = "none";
+                }
+            });
+        </script>    
     </body>
 </html>

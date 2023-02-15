@@ -45,7 +45,6 @@
                 </div>
                 <ul class="sidebar-links--container">
                     <li><a href="index.php">Overview</a></li>
-                    <li><a href="">Orders</a></li>
                     <li><a href="transactions.php">Transactions</a></li>
                     <li class="active"><a href="chat-list.php">Chats</a></li>
                     <li><a href="report.php">Report</a></li>
@@ -81,8 +80,7 @@
                     <!-- MOBILE SIDEBAR  -->
                     <div>
                         <ul class="mobile-sidebar-links-container">
-                            <li><a href="">Overview</a></li>
-                            <li><a href="">Orders</a></li>
+                            <li><a href="index.php">Overview</a></li>
                             <li><a href="transactions.php">Transactions</a></li>
                             <li class="active"><a href="chat-list.php">Chats</a></li>
                             <li><a href="report.php">Report</a></li>

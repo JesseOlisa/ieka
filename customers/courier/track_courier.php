@@ -21,79 +21,111 @@
     <head>
         <title>Track your courier on IEKA</title>
         <meta name="viewport" content="width=device-width, initial-scale = 1.0">
+        <link href="/ieka/assets/css/dashboardlayout.css" rel="stylesheet" type="text/css">
         <link href="/ieka/assets/css/courier.css" type="text/css" rel="stylesheet">
         <link href="/ieka/assets/css/all.min.css" rel="stylesheet" type="text/css">
+        
+        <!-- FONT AWESOME -->
+        <script src="https://kit.fontawesome.com/fb151ec1c7.js" crossorigin="anonymous" defer></script>
+        <!-- JAVASCRIPT -->
+        <script src="../../assets/javascript/dashboardLayout.js" defer></script>
+
         <script src="/ieka/assets/plugins/jquery-3.3.1.min.js"></script>
     </head>
     <body>
-        <!---SIDEBAR WITH COURIER SECTIONS-->
-        <aside class="side">
-            <div class="nomenclature">
-                <h4><?=$customer['first_name'].' '.$customer['last_name'];?></h4>
-                <p id="identity">Customer</p>
-                <hr>
-            </div>
-            <div class="menu">
-                <a href="dashboard.php" id="dashboard">dashboard</a>
-            </div>
-            <div class="menu">
-                <span class="courier-btn">courier</span>
-            </div>
-            <div class="courier_details" style="display:none;">
-                <a href="new_courier.php">new courier</a>
-                <a href="list_courier.php">all courier</a>
-                <a href="in_transit.php">on transit</a>
-                <a href="delivered.php">delivered</a>
-            </div>
-            <div class="menu">
-                <a href="track_courier.php" id="track">Track courier</a>
-            </div>
-        </aside>
+    <main class="dashboard--wrapper">
 
-        <!--SECTION WITH OTHER INFORMATION-->
-        <section class="main_information">
-            <!--nav bar-->
-            <div class="topnav">
-                <nav>
-                    <div class="account section">
-                        <a href="../account.php">account</a>
-                    </div>
-                    <div class="report section">
-                        <a href="../report.php" class="nav report">report</a>
-                    </div>
-                    <div class="enquiry section">
-                        <a href="../enquiry.php" class="nav enquiry">enquiry</a>
-                    </div>
-                    <div class="chat section">
-                        <a href="../chat-list.php" class="nav chat">chat</a>
-                    </div>
-                    <div class="transactions section">
-                        <a href="../transactions.php" class="nav transaction">transactions</a>
-                    </div>
-                    <div class="logout">
-                        <a href="../logout.php" class="nav-logout">logout</a>
-                    </div>
-                    <div class="index section" style="float:right;">
-                        <a href="../index.php">Home</a>
-                    </div>
-                </nav>
+<!-- DESKTOP SIDEBAR -->
+<div class="sidebar--wrapper">
+        <div class="logo--container">
+            <h4>ieka</h4>
+        </div>
+        <ul class="sidebar-links--container">
+            <li><a href="../index.php">Overview</a></li>
+            <li><a href="">Orders</a></li>
+            <li><a href="../transactions.php">Transactions</a></li>
+            <li><a href="../chat-list.php">Chats</a></li>
+            <li><a href="../report.php">Report</a></li>
+            <li class="active"><a href="../courier/dashboard.php">Courier</a></li>
+            <li><a href="../pay.php?id=<?=$customer['id']?>">Payment</a></li>
+        </ul>
+    </div>
+    <div class="content-wrapper">
+        <!-- DESKTOP NAVBAR -->
+        <div class="dashboard--navbar">
+            <div class="menu--container">
+                <div role="button" class="menu--btn"></div>
             </div>
+            <div class="mobile-logo--container">
+                <h4>ieka</h4>
+            </div>
+            <div class="logout--container">
+                <button class="btn btn-green">
+                    <a href="../logout.php">Logout</a>
+                </button>
+            </div>
+        </div>
+       
+        <!-- MOBILE SIDEBAR -->
+        <div class="mobile-navbar--container">
+            <!-- MOBILE SIDEBAR  -->
+            <div>
+                <ul class="mobile-sidebar-links-container">
+                    <li><a href="../index.php">Overview</a></li>
+                    <li><a href="">Orders</a></li>
+                    <li><a href="../transactions.php">Transactions</a></li>
+                    <li><a href="../chat-list.php">Chats</a></li>
+                    <li><a href="../report.php">Report</a></li>
+                    <li class="active"><a href="../courier/dashboard.php">Courier</a></li>
+                    <li><a href="../pay.php?id=<?=$customer['id']?>">Payment</a></li>
+                </ul>
+            </div>
+        </div>
 
-                <!--Form to fill in the reference number-->
+
+
+
+
+        <!-- INSERT DASHBOARD CONTENT HERE -->
+        <div class="dashboard--main--content">
+            <div class="courier--nav-links--container">
+                    <a href="dashboard.php">
+                        <button type="button" class="btn btn-green">
+                            Sell all courier
+                        </button></a>
+                <div class="options--container">
+                    <a href="new_courier.php">
+                        <button type="button" class="btn btn-green">
+                            New courier
+                        </button>
+                    </a>
+                    <a href="track_courier.php" id="track">
+                        <button type="button" class="btn btn-green disabled">
+                            Track courier
+                        </button>
+                    </a>
+                </div>
+            </div>
+            
+            <!--Form to fill in the reference number-->
             <div class="track">
                 <form action="track_courier_code.php" class="track_form" method="GET">
                     <p class="ref_number">Enter courier reference number</p>
-                    <input type="search" id="trace" name="trace">
-                    <input type="submit" value="Track" id="track_courier" name="track_courier">
+                    <div class="track--input--container">
+                        <input type="search" id="trace" name="trace">
+                        <input type="submit" value="Track" id="track_courier" name="track_courier">
+                    </div>
                 </form>
-                
-                <div class="options">
-                    <p class="one">
-                        <span id="firs"></span>
-                        <span id="clos">Close</p>
-                </div>
+    
+            <div class="options">
+                <p class="one">
+                    <span id="firs"></span>
+                    <span id="clos">Close</span>
+                </p>
             </div>
-        </section>
+        </main>
+        
         <script src="dropdown.js"></script> 
     </body>
 </html>
+    </div>

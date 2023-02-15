@@ -54,6 +54,7 @@
         <meta name="viewport" content="width=device-width, initial-scale = 1.0">
         
         <!-- LINKS TO STYLES -->
+        <link href="/ieka/assets/css/styles.css" rel="stylesheet" type="text/css">
         <link href="/ieka/assets/css/dashboardlayout.css" rel="stylesheet" type="text/css">
         <link href="/ieka/assets/css/courier.css" type="text/css" rel="stylesheet">
         <link href="/ieka/assets/css/all.min.css" rel="stylesheet" type="text/css">
@@ -69,7 +70,6 @@
                 </div>
                 <ul class="sidebar-links--container">
                     <li><a href="index.php">Overview</a></li>
-                    <li><a href="">Orders</a></li>
                     <li class="active"><a href="transactions.php">Transactions</a></li>
                     <li><a href="chat-list.php">Chats</a></li>
                     <li><a href="report.php">Report</a></li>
@@ -107,8 +107,7 @@
                     <!-- MOBILE SIDEBAR  -->
                     <div>
                         <ul class="mobile-sidebar-links-container">
-                            <li><a href="">Overview</a></li>
-                            <li><a href="">Orders</a></li>
+                            <li><a href="index.php">Overview</a></li>
                             <li class="active"><a href="transactions.php">Transactions</a></li>
                             <li><a href="chat-list.php">Chats</a></li>
                             <li><a href="report.php">Report</a></li>
@@ -142,7 +141,7 @@
                                            <td>farm id</td>
                                            <td>farmer</td>
                                            <td>status</td>
-                                           <td>product</td>
+                                           <td>action</td>
                                        </tr>
                                    </thead>
                                    <tbody class="table_body">
@@ -231,5 +230,23 @@
                     </div>
                 </div>
             </div>
+            <script>
+                $("#search").keyup(function(event) {
+                    console.log('goon');
+                //get the value in the search box
+                    var search_keyword = event.target.value;
+                    if (search_keyword) {
+                        var url = document.location.origin + '/ieka/search.php'
+                        //make an ajax call to the server with the above url
+                        $.get(url, {keyword: search_keyword}, function(response, statusCode, xJR){
+                            document.getElementById("search-list").innerHTML = response;
+                            //display the options corresponding to the searchwords
+                            document.getElementById('search-list').style.display = "block";
+                        });
+                    } else {
+                        document.getElementById('search-list').style.display = "none";
+                    }
+                });
+        </script>  
     `</body>
     </html>

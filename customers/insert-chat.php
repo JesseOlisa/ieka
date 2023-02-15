@@ -25,7 +25,7 @@
          
         if(!empty($message)) {
             //insert into messages table
-            $sql = "INSERT INTO message_store(`sender`, `receiver`, `message`, `created`)
+            $sql = "INSERT INTO message_store(`sender`, `receiver`, `message`, `created_at`)
                  VALUES('{$sender}', '{$recipient}', '{$message}', '{$created_at}')";
             $insert = $database->query($sql);
 

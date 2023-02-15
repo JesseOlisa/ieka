@@ -45,11 +45,10 @@
                 </div>
                 <ul class="sidebar-links--container">
                     <li><a href="index.php">Overview</a></li>
-                    <li><a href="">Orders</a></li>
                     <li><a href="transactions.php">Transactions</a></li>
                     <li><a href="chat-list.php">Chats</a></li>
                     <li class="active"><a href="report.php">Report</a></li>
-                    <li><a href="courier/dashboard.php">Courier</a></li>
+                    <li><a href="./courier/dashboard.php">Courier</a></li>
                     <li><a href="pay.php?id=<?=$customer['id']?>">Payment</a></li>
                 </ul>
             </div>
@@ -88,7 +87,7 @@
                             <li><a href="transactions.php">Transactions</a></li>
                             <li><a href="chat-list.php">Chats</a></li>
                             <li class="active"><a href="report.php">Report</a></li>
-                            <li><a href="courier/dashboard.php">Courier</a></li>
+                            <li><a href="./courier/dashboard.php">Courier</a></li>
                             <li><a href="pay.php?id=<?=$customer['id']?>">Payment</a></li>
                         </ul>
                     </div>
@@ -130,5 +129,23 @@
 
         <script src="report.js"></script>
         <script src="text.js"></script>
+        <script>
+            $("#search").keyup(function(event) {
+                console.log('goon');
+                //get the value in the search box
+                var search_keyword = event.target.value;
+                if (search_keyword) {
+                    var url = document.location.origin + '/ieka/search.php'
+                    //make an ajax call to the server with the above url
+                    $.get(url, {keyword: search_keyword}, function(response, statusCode, xJR){
+                        document.getElementById("search-list").innerHTML = response;
+                        //display the options corresponding to the searchwords
+                        document.getElementById('search-list').style.display = "block";
+                });
+                } else {
+                    document.getElementById('search-list').style.display = "none";
+                }
+            });
+        </script>
     </body>
 </html>

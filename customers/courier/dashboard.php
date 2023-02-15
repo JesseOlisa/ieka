@@ -11,30 +11,40 @@
     } else {
     }
 
-    //get the details of the farmer logged in
+    //get the details of the customer logged in
     $sql = "SELECT * FROM customers WHERE id = {$_SESSION['id']}";
     $result = $database->query($sql)->fetch_assoc();
 
-    //get the number of couriers with status 'delivered'
-    $skl = "SELECT * FROM customer_couriers WHERE (customer_id = {$result['id']} AND status = 'Delivered')";
-    $feedback = $database->query($skl);
-    $delivered_no = mysqli_num_rows($feedback);
+    //assign a page number to the current page
+    if(!isset($_GET['page'])) {
+        $page = 1;
+    } else {
+        $page = $_GET['page'];
+    }
 
-    //get the number of couriers with status 'On transit'
-    $sgl = "SELECT * FROM customer_couriers WHERE (customer_id = {$result['id']} AND status = 'On transit')";
-    $trans = $database->query($sgl);
-    $transit_no = mysqli_num_rows($trans);
+    //number of records to be in a page
+    $limit = 10;
 
-    //get the number of couriers with status 'Order placed'
-    $sml = "SELECT * FROM customer_couriers WHERE (customer_id = {$result['id']} AND status = 'Order placed')";
-    $order_placed = $database->query($sml);
-    $order_no = mysqli_num_rows($order_placed);
+    //offset value to get records for the next page and determine the initial page limit
+    $offset = ((int)$page - (int)1) * $limit;
+    $previous = (int)$page - 1;
+    $next = (int)$page + 1;
+    $adjacent = "2";
+
+    //get the total number of pages for pagination
+    $scl = "SELECT * FROM transactions";
+    $query = $database->query($scl);
+    $total = mysqli_num_rows($query);
+
+    
+    //get the required number of pages
+    $pages = ceil($total/$limit);
 
     //get the number of couriers the customer has
-    $snl = "SELECT * FROM customer_couriers WHERE customer_id = {$result['id']}";
+    $snl = "SELECT * FROM customer_couriers WHERE customer_id = {$result['id']} ORDER BY id DESC LIMIT $offset, $limit";
     $recond = $database->query($snl);
-    $courier_no = mysqli_num_rows($recond);
 
+    
 ?>
 
 <!DOCTYPE HTML>
@@ -49,7 +59,7 @@
         <!-- FONT AWESOME -->
         <script src="https://kit.fontawesome.com/fb151ec1c7.js" crossorigin="anonymous" defer></script>
         <!-- JAVASCRIPT -->
-        <script src="../assets/javascript/dashboardLayout.js" defer></script>
+        <script src="../../assets/javascript/dashboardLayout.js" defer></script>
 
     </head>
     <body>
@@ -61,11 +71,10 @@
                 </div>
                 <ul class="sidebar-links--container">
                     <li><a href="../index.php">Overview</a></li>
-                    <li><a href="">Orders</a></li>
                     <li><a href="../transactions.php">Transactions</a></li>
                     <li><a href="../chat-list.php">Chats</a></li>
                     <li><a href="../report.php">Report</a></li>
-                    <li class="active"><a href="courier/dashboard.php">Courier</a></li>
+                    <li class="active"><a href="../courier/dashboard.php">Courier</a></li>
                     <li><a href="../pay.php?id=<?=$customer['id']?>">Payment</a></li>
                 </ul>
             </div>
@@ -78,18 +87,10 @@
                     <div class="mobile-logo--container">
                         <h4>ieka</h4>
                     </div>
-                    <div class="search-navbar">
-                        <form action="chatList.php" class="search-list" method="POST">
-                            <label for="search" class="search--container">
-                                <input type="text" autocomplete="on" placeholder="Which agro product do you want?" id="search" class="search-bar" name="find">
-                                <span><i class="fa-solid fa-magnifying-glass"></i></span>
-                            </label>
-                            <ul class="search-list" id="search-list" style="display: none;"></ul>
-                        </form>
-                    </div>
+                    
                     <div class="logout--container">
                         <button class="btn btn-green">
-                            <a href="logout.php">Logout</a>
+                            <a href="../logout.php">Logout</a>
                         </button>
                     </div>
                 </div>
@@ -99,13 +100,12 @@
                     <!-- MOBILE SIDEBAR  -->
                     <div>
                         <ul class="mobile-sidebar-links-container">
-                            <li><a href="">Overview</a></li>
-                            <li><a href="">Orders</a></li>
-                            <li><a href="transactions.php">Transactions</a></li>
-                            <li><a href="chat-list.php">Chats</a></li>
-                            <li><a href="report.php">Report</a></li>
-                            <li class="active"><a href="courier/dashboard.php">Courier</a></li>
-                            <li><a href="pay.php?id=<?=$customer['id']?>">Payment</a></li>
+                            <li><a href="../index.php">Overview</a></li>
+                            <li><a href="../transactions.php">Transactions</a></li>
+                            <li><a href="../chat-list.php">Chats</a></li>
+                            <li><a href="../report.php">Report</a></li>
+                            <li class="active"><a href="../courier/dashboard.php">Courier</a></li>
+                            <li><a href="../pay.php?id=<?=$customer['id']?>">Payment</a></li>
                         </ul>
                     </div>
                 </div>
@@ -117,7 +117,7 @@
                 <!-- INSERT DASHBOARD CONTENT HERE -->
                 <div class="dashboard--main--content">
                     <div class="courier--nav-links--container">
-                            <a href="list_courier.php">
+                            <a href="dashboard.php">
                                 <button type="button" class="btn btn-green disabled">
                                     Sell all courier
                                 </button></a>
@@ -155,7 +155,7 @@
                             <tr>
                         <?php
                             $number = 1;
-                            while($couriers = $fetch->fetch_assoc()):
+                            while($couriers = $recond->fetch_assoc()):
                                 $sql = "SELECT * FROM farmers WHERE farm_id = '{$couriers['farmer_id']}' LIMIT 1";
                                 $farmers = $database->query($sql);
                                 while($farmer = $farmers->fetch_assoc()):
@@ -243,80 +243,4 @@
 
     
     
-    <!---SIDEBAR WITH COURIER SECTIONS-->
-    <!-- <aside class="side">
-        <div class="nomenclature">
-            <h4><?=$result['first_name'].' '.$result['last_name'];?></h4>
-            <p id="identity">Customer</p>
-            <hr>
-        </div>
-        <div class="menu">
-            <a href="dashboard.php" id="dashboard">dashboard</a>
-        </div>
-        <div class="menu">
-            <span class="courier-btn">courier</span>
-        </div>
-        <div class="courier_details">
-            <a href="new_courier.php">new courier</a>
-            <a href="list_courier.php">all courier</a>
-            <a href="in_transit.php">on transit</a>
-            <a href="delivered.php">delivered</a>
-        </div>
-        <div class="menu">
-            <a href="track_courier.php" id="track">Track courier</a>
-        </div>
-    </aside> -->
-
-    <!--SECTION WITH OTHER INFORMATION-->
-    <!-- <section class="main_information">
-      <div class="topnav">
-            <nav>
-                <div class="account section">
-                    <a href="../account.php">account</a>
-                </div>
-                <div class="report section">
-                    <a href="../report.php" class="nav report">report</a>
-                </div>
-                <div class="enquiry section">
-                    <a href="../enquiry.php" class="nav enquiry">enquiry</a>
-                </div>
-                <div class="chat section">
-                    <a href="../chat-list.php" class="nav chat">chat</a>
-                </div>
-                <div class="transactions section">
-                    <a href="../transactions.php" class="nav transaction">transactions</a>
-                </div>
-                <div class="logout">
-                    <a href="../logout.php" class="nav-logout">logout</a>
-                </div>
-                <div class="index section" style="float:right;">
-                    <a href="../index.php">Home</a>
-                </div>
-            </nav>
-        </div>
-
-        <div class="headnote">
-            <h6>Be incharge of all your courier activities on IEKA</h6>
-            <hr id="under">
-        </div> -->
-
-        <!--the various categories in the courier section-->
-        <!-- <div class="niche">
-            <div>
-                <p class="descript"><?=$courier_no;?></p>
-                <p class="description">all courier</p>
-            </div>
-            <div>
-                <p class="descript"><?=$delivered_no;?></p>
-                <p class="description">Delivered</p>
-            </div>
-            <div>
-                <p class="descript"><?=$order_no;?></p>
-                <p class="description">new courier</p>
-            </div>
-            <div class="second_row">
-                <p class="descript"><?=$transit_no;?></p>
-                <p class="description">on transit</p>
-            </div>
-        </div> -->
-    <!-- </section> -->
+    

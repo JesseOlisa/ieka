@@ -98,77 +98,118 @@
         <meta http-equiv="X-UA-Compatible" content="ie-edge">
         <!--Links to the stylesheets-->
         <meta name="viewport" content="width=device-width, initial-scale = 1.0">
+        <link href="/ieka/assets/css/dashboardlayout.css" rel="stylesheet" type="text/css">
         <link href="/ieka/assets/css/chatlist.css" rel="stylesheet" type="text/css">
         <link href="/ieka/assets/css/all.min.css" rel="stylesheet" type="text/css">
         <script src="/ieka/assets/plugins/jquery-3.3.1.min.js"></script>
     </head>
     <body>
-        <header>
-            <div class="front-line-header">
-                <div class="ieka-logo">
-                    <h1 class="name">ieka</h1>
+        <main class="dashboard--wrapper">
+             <!-- DESKTOP SIDEBAR -->
+             <div class="sidebar--wrapper">
+                <div class="logo--container">
+                    <h4>ieka</h4>
                 </div>
-                <div class="header">
-                    <p><span><?= $customer['first_name'];?></span>! Make payments from your bed</p>
-                </div>
-                <div class="out">
-                    <span id="logout" class="logout"><a href="logout.php">logout</a></span> 
-                    <span id="home" class="home"><a href="index.php">Home</a></span>
-                </div>
+                <ul class="sidebar-links--container">
+                    <li class="active"><a href="index.php">Overview</a></li>
+                    <li><a href="">Orders</a></li>
+                    <li><a href="transactions.php">Transactions</a></li>
+                    <li><a href="chat-list.php">Chats</a></li>
+                    <li><a href="report.php">Report</a></li>
+                    <li><a href="courier/dashboard.php">Courier</a></li>
+                    <li><a href="pay.php?id=<?=$customer['id']?>">Payment</a></li>
+                </ul>
             </div>
-        </header>
-
-        <section class="users-search">
-            <div class="find-chat">
-                <form action="chatList.php" class="search-list" method="POST">
-                    <input type="text" name="search" placeholder="Enter farm id to search" id="find">
-                    <button name="check" type="button" id="click"><i class="fab fa-telegram"></i></button>
-                </form>
-            </div>
-        </section>
-        
-        <!--This part contains details of the farmer the customer bargained with-->
-        <section class="form-details">
-            <div class="purchase">
-                <form class="order_info" action="" method="POST">
-                    <h4>AGRO ORDER PAYMENT FORM</h4>
-                    <div class="bucket">
-                        <div class="flex-section">
-                            <div>
-                                <label for="buyer_name">buyer name</label>
-                                <input type="text" name="buyer_name" id="buyer_name" required>
-                            </div>
-                            <div>
-                                <label for="buyer_phone">buyer phone no</label>
-                                <input type="tel" name="buyer_phone" id="buyer_phone" required>
-                                <input type="hidden" name="buyer_email" value="<?=$customer['email'];?>">
-                            </div>
-                        </div>
-                        <div class="farmer-info">
-                            <div>
-                                <label for="farmer_id">Farmer Id</label>
-                                <input type="text" name="farmer_id" id="farmer_id" required>
-                            </div>
-                            <div>
-                                <label for="farmer_name">Farmer name</label>
-                                <input type="text" name="farmer_name" id="farmer_name">
-                            </div>
-                        </div>
-                        <div class="textarea">
-                            <label for="products">Products and Quantity</label>
-                            <textarea name="products" id="products" cols="55" rows="3" required></textarea>                    
-                        </div>
-                        <div>
-                            <label for="price" class="money">Total Amount (NGN)</label>
-                            <input type="text" name="price" id="price" required>
-                        </div>
-                        <div>
-                            <input type="submit" name="pay" value="Make Payment" id="payment">
-                        </div>
+            <div class="content-wrapper">
+                <!-- DESKTOP NAVBAR -->
+                <div class="dashboard--navbar">
+                    <div class="menu--container">
+                        <div role="button" class="menu--btn"></div>
                     </div>
-                </form>
+                    <div class="mobile-logo--container">
+                        <h4>ieka</h4>
+                    </div>
+                    <div class="search-navbar">
+                        <form action="chatList.php" class="search-list" method="POST">
+                            <label for="search" class="search--container">
+                                <input type="text" autocomplete="on" placeholder="Which agro product do you want?" id="search" class="search-bar" name="find">
+                                <span><i class="fa-solid fa-magnifying-glass"></i></span>
+                            </label>
+                            <ul class="search-list" id="search-list" style="display: none;"></ul>
+                        </form>
+                    </div>
+                    <div class="logout--container">
+                        <button class="btn btn-green">
+                            <a href="logout.php">Logout</a>
+                        </button>
+                    </div>
+                </div>
+               
+                <!-- MOBILE SIDEBAR -->
+                <div class="mobile-navbar--container">
+                    <!-- MOBILE SIDEBAR  -->
+                    <div>
+                        <ul class="mobile-sidebar-links-container">
+                            <li class="active"><a href="">Overview</a></li>
+                            <li><a href="">Orders</a></li>
+                            <li><a href="transactions.php">Transactions</a></li>
+                            <li><a href="chat-list.php">Chats</a></li>
+                            <li><a href="report.php">Report</a></li>
+                            <li><a href="courier/dashboard.php">Courier</a></li>
+                            <li><a href="pay.php?id=<?=$customer['id']?>">Payment</a></li>
+                        </ul>
+                    </div>
+                </div>
+
+
+                <!-- INSERT DASHBOARD CONTENT HERE -->
+                <div class="dashboard--main--content">
+                    <!--This part contains details of the farmer the customer bargained with-->
+                    <section class="form-details">
+                        <div class="purchase">
+                            <form class="order_info" action="" method="POST">
+                                <h4>AGRO ORDER PAYMENT FORM</h4>
+                                <div class="bucket">
+                                    <div class="flex-section">
+                                        <div>
+                                            <label for="buyer_name">buyer name</label>
+                                            <input type="text" name="buyer_name" id="buyer_name" required>
+                                        </div>
+                                        <div>
+                                            <label for="buyer_phone">buyer phone no</label>
+                                            <input type="tel" name="buyer_phone" id="buyer_phone" required>
+                                            <input type="hidden" name="buyer_email" value="<?=$customer['email'];?>">
+                                        </div>
+                                    </div>
+                                    <div class="farmer-info">
+                                        <div>
+                                            <label for="farmer_id">Farmer Id</label>
+                                            <input type="text" name="farmer_id" id="farmer_id" required>
+                                        </div>
+                                        <div>
+                                            <label for="farmer_name">Farmer name</label>
+                                            <input type="text" name="farmer_name" id="farmer_name">
+                                        </div>
+                                    </div>
+                                    <div class="textarea">
+                                        <label for="products">Products and Quantity</label>
+                                        <textarea name="products" id="products" cols="55" rows="3" required></textarea>                    
+                                    </div>
+                                    <div>
+                                        <label for="price" class="money">Total Amount (NGN)</label>
+                                        <input type="text" name="price" id="price" required>
+                                    </div>
+                                    <div>
+                                        <input type="submit" name="pay" value="Make Payment" id="payment">
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                    </section>
+                    
+                </div>
             </div>
-        </section>
+        </main>
         <script src="../assets/javascript/all.min.js"></script>
     </body>
 </html>

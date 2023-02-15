@@ -136,23 +136,6 @@
 
         <!--photo gallery with wordings and categories-->
         <section class="slideshow category">
-            <!--crop science-->
-            <!-- <div class="crop">
-                <ul class="crops">
-                    <h6>crops</h6>
-                    <li>Cereals e.g <strong>rice, maize, wheat, sorghum...</strong></li>
-                    <li>Pulses e.g <strong>beans, peas, lentils...</strong></li>
-                    <li>Oils and oil seeds e.g <strong>groundnut, soybean, mustard...</strong></li>
-                    <li>Vegetables e.g <strong>cabbage, onion, cucumber...</strong></li>
-                    <li>Fruits e.g <strong>orange, pineapple, mango, guava...</strong></li>
-                    <li>Nuts e.g <strong>cashewnut, almond, pinenuts...</strong></li>
-                    <li>Sugars & Starches e.g <strong>cassava, milk, sugarcane...</strong></li>
-                    <li>Fibres e.g <strong>cotton, banana, silk, wool...</strong></li>
-                    <li>Beverages e.g <strong>rootbeer, tea, chocolate...</strong></li>
-                    <li>Spices e.g <strong>ginger, pepper, curry...</strong></li>
-                    <li><a href="category.php">See more...</a></li>
-                </ul>
-            </div> -->
             <!--photo gallery-->
             <div class="slide">
                 <div class="photo">
@@ -188,17 +171,6 @@
                 </div>
             </div>
             
-            <!--animal husbandary-->
-            <!-- <div class="animal husbandary">
-                <h6>animals</h6>
-                <ul class="animals">
-                    <li>Dairy e.g <strong></strong></li>
-                    <li>Pets e.g <strong></strong></li>
-                    <li>Poultry e.g <strong></strong></li>
-                    <li>Aquaculture e.g <strong></strong></li>
-                    <li><a href="category.php">See more...</a></li>
-                </ul>
-            </div> -->
         </section>
         
         <!--display according to groups-->
@@ -433,21 +405,7 @@
             </div>
             
             <div class="second-part">
-                <!-- social media section
-                <div class="social-media">
-                    <div class="twitter media">
-                        <a href="#"><img src="./assets/ionicons-2.0.1/png/512/social-twitter-outline.png" alt="twitter"></a>
-                    </div>
-                    <div class="instagram media">
-                        <a href="#"><img src="./assets/ionicons-2.0.1/png/512/social-instagram-outline.png" alt="instagram"></a>
-                    </div>
-                    <div class="linkedIn media">
-                        <a href="#"><img src="./assets/ionicons-2.0.1/png/512/social-linkedin-outline.png" alt="linkedIn"></a>
-                    </div>
-                    <div class="facebook media">
-                        <a href="#"><img src="./assets/ionicons-2.0.1/png/512/social-facebook-outline.png" alt="facebook"></a>
-                    </div>
-                </div> -->
+               
                 <div class="flag--container">
                     <img src="./assets/images/download.png" alt="nigeria flag"> 
                     Nigeria

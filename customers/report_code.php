@@ -28,7 +28,7 @@
             if($customer['id'] === $_SESSION['id']) {
                 $portfolio = "customer";
                 //insert into the REPORTS database
-                $sql = "INSERT INTO reports(`name`, `unique_code`, `portfolio`, `report`, `modified_at`)
+                $sql = "INSERT INTO reports(`name`, `unique_id`, `portfolio`, `report`, `modified_at`)
                     VALUES('{$name}', '{$customer['id']}', '{$portfolio}', '{$report}', '{$created_at}')";
                 $result = $database->query($sql);
                 if($result) {

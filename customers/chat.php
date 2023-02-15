@@ -40,7 +40,6 @@
             <div class="header">
                 <div class="back-and-picture">
                     <a href="chat-list.php" class="back-icon"><i class="fas fa-arrow-left"></i></a>
-                    <img src="../assets/images/Farmers/<?=$result['picture'];?>" alt="">
                     <!--the icon placed here is back arrow icon-->
                     <div class="chat-details">
                         <span><?=$result['first_name']. ' '. $result['last_name'];?></span>
